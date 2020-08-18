@@ -1,0 +1,13 @@
+C:\Karthick\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.exe
+C:\Karthick\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.deps.json
+C:\Karthick\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.runtimeconfig.json
+C:\Karthick\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.runtimeconfig.dev.json
+C:\Karthick\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.dll
+C:\Karthick\Algorithms\bin\Debug\netcoreapp3.1\Algorithms.pdb
+C:\Karthick\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.csprojAssemblyReference.cache
+C:\Karthick\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.AssemblyInfoInputs.cache
+C:\Karthick\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.AssemblyInfo.cs
+C:\Karthick\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.csproj.CoreCompileInputs.cache
+C:\Karthick\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.dll
+C:\Karthick\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.pdb
+C:\Karthick\Algorithms\obj\Debug\netcoreapp3.1\Algorithms.genruntimeconfig.cache
