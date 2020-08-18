@@ -17,10 +17,29 @@ namespace Algorithms
             //ExecSelectionSort(inputArray);
             //ExecBubbleSort(inputArray);            
             //ExecMeetingRangeProblem();
-            //ExecReverseString();
-            //Todo: Convert these console test into unit test projects
-            ExecReverseWords();
+            //ExecReverseString();            
+            //ExecReverseWords();
+            ExecMergeArrays();
         }
+
+        private static void ExecMergeArrays()
+        {
+            //test case1
+            //var input = new int[] {1,28, 69,222};
+            //var input2 = new int[] {3,18, 70,92, 600};
+            //test case2
+            //var input = new int[] { 2, 4, 6 };
+            //var input2 = new int[] { 1, 3, 7 };
+            //test case3
+            var input = new int[] { 2, 4, 6, 8 };
+            var input2 = new int[] { 1, 7 };
+            //Console.WriteLine(new string(input));
+            var m = MergeSortedArrays.MergeArrays(input, input2);
+            foreach(var item in m)
+            {
+                Console.WriteLine(item);                        
+            }
+        }     
 
         private static void ExecReverseWords()
         {
