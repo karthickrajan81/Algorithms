@@ -9,12 +9,7 @@ namespace Algorithms
     class Program
     {
         static void Main(string[] args)
-        {           
-            /*int[] inputArray = new int[]{6, 5, 9, 3, 2, 1};
-            for(int i= 0; i< args.Length; i++)
-            {               
-                 int.TryParse(args[i], out inputArray[i]);
-            }*/
+        {          
             //ExecQueueDs(inputArray);
             //ExecCircularQueue(inputArray);
             //ExecMergeSort(inputArray);
@@ -22,6 +17,7 @@ namespace Algorithms
             //ExecBubbleSort(inputArray);            
             //ExecMeetingRangeProblem();
             //ExecReverseString();
+            //Todo: Convert these console test into unit test projects
             ExecReverseWords();
         }
 
