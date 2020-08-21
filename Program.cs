@@ -19,7 +19,21 @@ namespace Algorithms
             //ExecMeetingRangeProblem();
             //ExecReverseString();            
             //ExecReverseWords();
-            ExecMergeArrays();
+            //ExecMergeArrays();
+            ExecFirstComeFirstServe();
+        }
+
+        private static void ExecFirstComeFirstServe()
+        {
+            //Test case 1
+            //var takeOutOrders = new int[] { 1, 4, 5 };
+            //var dineInOrders = new int[] { 2, 3, 6 };
+            //var servedOrders = new int[] { 1, 2, 3, 4, 5, 6 };
+            var takeOutOrders = new int[] { 1, 5 };
+            var dineInOrders = new int[] { 2, 3, 6 };
+            var servedOrders = new int[] { 1, 2, 3, 5, 6, 8 };
+            var result =  FirstComeFirstServe.IsFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders);
+            Console.WriteLine($"Expected result:{false} Actual Result:{result}");
         }
 
         private static void ExecMergeArrays()
