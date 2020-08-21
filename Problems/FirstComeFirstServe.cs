@@ -16,45 +16,18 @@ namespace Algorithms.Problems
             {
                 return false;
             }
-            var inDict = new Dictionary<int,int>();
-            for(int index = 0; index < takeOutOrders.Length; index++)
-            {
-                inDict.Add(takeOutOrders[index],index);
-            }
-            var outDict = new Dictionary<int,int>();
-            for(int index = 0; index < dineInOrders.Length; index++)
-            {
-                outDict.Add(dineInOrders[index],index);
-            }
             int inPointer = 0;
             int outPointer = 0;
             
             for(int i=0;i<servedOrders.Length;i++)
             {
-                var o = servedOrders[i];
-                if(inDict.ContainsKey(o))
+                if(inPointer < dineInOrders.Length && servedOrders[i]==dineInOrders[inPointer])
                 {
-                    if(inPointer <= inDict[o])
-                    {
-                        inPointer = inDict[o];
-                        inPointer++;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    inPointer++;
                 }
-                else if(outDict.ContainsKey(o))
+                else if(outPointer < takeOutOrders.Length && servedOrders[i]==takeOutOrders[outPointer])
                 {
-                    if(outPointer <= outDict[o])
-                    {
-                        outPointer = outDict[o];
-                        outPointer++;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    outPointer++;
                 }
                 else
                 {
