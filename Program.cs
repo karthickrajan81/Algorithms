@@ -20,8 +20,18 @@ namespace Algorithms
             //ExecReverseString();            
             //ExecReverseWords();
             //ExecMergeArrays();
-            ExecFirstComeFirstServe();
+            //ExecFirstComeFirstServe();
+            ExecSameMovieLength();
         }
+
+        private static void ExecSameMovieLength()
+        {
+            //Test case 1:
+            //var result = SameMovieLength.CanTwoMoviesFillFlight(new int[] { 3, 8, 3 }, 6);
+            //Test case 2:
+            var result =  SameMovieLength.CanTwoMoviesFillFlight(new int[] { 1, 2, 3, 4, 5, 6 }, 7);
+            Console.WriteLine($"Expected result:{true} Actual Result:{result}");
+        }        
 
         private static void ExecFirstComeFirstServe()
         {
