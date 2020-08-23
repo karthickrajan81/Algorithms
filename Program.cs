@@ -21,7 +21,15 @@ namespace Algorithms
             //ExecReverseWords();
             //ExecMergeArrays();
             //ExecFirstComeFirstServe();
-            ExecSameMovieLength();
+            //ExecSameMovieLength();
+            ExecFindRepeatNums();
+        }
+
+        private static void ExecFindRepeatNums()
+        {
+            var numbers = new int[] { 1, 5, 9, 7, 2, 6, 3, 8, 2, 4 };
+            var actual = RepeatingNumber.FindRepeat(numbers);
+            Console.WriteLine($"Expected Resut {2} Actual Result {actual}");
         }
 
         private static void ExecSameMovieLength()
