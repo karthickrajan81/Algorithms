@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using Algorithms.DS;
 using Algorithms.Problems;
 using Algorithms.Sorting;
+using Algorithms.Search;
 
 namespace Algorithms
 {
@@ -22,12 +22,57 @@ namespace Algorithms
             //ExecMergeArrays();
             //ExecFirstComeFirstServe();
             //ExecSameMovieLength();
-            ExecFindRepeatNums();
+            //ExecFindRepeatNums();
+            ExecBinarySearch();        
+        }
+
+        private static void ExecBinarySearch()
+        {
+            var numbers = new int[] { 1,2,3,77,99,1093 };
+            //Binary search test cases           
+            Console.WriteLine($"Expected Resut {false} Actual Result {BinarySearch.Search(numbers,5000)}");
+            Console.WriteLine($"Expected Resut {true} Actual Result {BinarySearch.Search(numbers,1093)}");
+            Console.WriteLine($"Expected Resut {true} Actual Result {BinarySearch.Search(numbers,2)}");
+            Console.WriteLine($"Expected Resut {false} Actual Result {BinarySearch.Search(numbers,0)}");
+
+            numbers = new int[] {0, 2, 4, 6, 8, 10, 12, 14, 16};
+            UnitTestForBinarySearch(numbers,9, false) ;
+            UnitTestForBinarySearch(new int[] {0, 2, 4, 6, 8, 10, 12, 14, 16, 18 },9, false) ;
+            UnitTestForBinarySearch(numbers,0, true) ;
+            UnitTestForBinarySearch(numbers,16, true) ;
+            UnitTestForBinarySearch(numbers,8, true) ;
+            AllTrueCases();
+            AllFalseCases();
+        }
+
+        private static void AllTrueCases() 
+        {
+            int[] sorted = new int[] { 0, 2, 4, 6, 8, 10, 12, 14, 16 }; 
+            for (int i = 0; i < sorted.Length; i++) 
+            {
+                UnitTestForBinarySearch(sorted, sorted[i],true);
+            }
+        }
+ 
+        private static void AllFalseCases() 
+        {
+            int[] sorted = new int[] { 0, 2, 4, 6, 8, 10, 12, 14, 16 }; 
+            UnitTestForBinarySearch(sorted,sorted[0] - 1, false);    
+            for (int i = 0; i < sorted.Length; i++) 
+            {
+                UnitTestForBinarySearch(sorted, sorted[i] + 1,false);
+            }   
+        }
+
+        private static void UnitTestForBinarySearch(int[] numbers,int searchParm, bool expectedResult)
+        {
+            Console.WriteLine($"Expected Resut {expectedResult} Actual Result {BinarySearch.RecursiveSearch(numbers,-1,numbers.Length,searchParm)}");
         }
 
         private static void ExecFindRepeatNums()
         {
             var numbers = new int[] { 1, 5, 9, 7, 2, 6, 3, 8, 2, 4 };
+           
             var actual = RepeatingNumber.FindRepeat(numbers);
             Console.WriteLine($"Expected Resut {2} Actual Result {actual}");
         }
@@ -35,9 +80,9 @@ namespace Algorithms
         private static void ExecSameMovieLength()
         {
             //Test case 1:
-            //var result = SameMovieLength.CanTwoMoviesFillFlight(new int[] { 3, 8, 3 }, 6);
+            var result = SameMovieLength.CanTwoMoviesFillFlight(new int[] { 3, 8, 3 }, 6);
             //Test case 2:
-            var result =  SameMovieLength.CanTwoMoviesFillFlight(new int[] { 1, 2, 3, 4, 5, 6 }, 7);
+            //var result =  SameMovieLength.CanTwoMoviesFillFlight(new int[] { 1, 2, 3, 4, 5, 6 }, 7);
             Console.WriteLine($"Expected result:{true} Actual Result:{result}");
         }        
 
