@@ -23,7 +23,36 @@ namespace Algorithms
             //ExecFirstComeFirstServe();
             //ExecSameMovieLength();
             //ExecFindRepeatNums();
-            ExecBinarySearch();        
+            //ExecBinarySearch();        
+             ExecPalindromeProblem();
+        }
+
+        private static void ExecPalindromeProblem()
+        {
+            var testcase = "dad";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+            testcase = "cicic";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+            testcase = "sweet";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+            testcase = "mom";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+              testcase = "level";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+              testcase = "Racecar";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+              testcase = "MADAM";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+              testcase = "noon";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+                testcase = "radar";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+                testcase = "hi";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+                testcase = "";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+                testcase = "a";
+            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
         }
 
         private static void ExecBinarySearch()
