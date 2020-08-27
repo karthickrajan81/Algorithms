@@ -42,17 +42,20 @@ namespace Algorithms
               testcase = "Racecar";
             Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
               testcase = "MADAM";
-            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+            Console.WriteLine($"Palindrome on any combination Test:{testcase} Result-{Palindrome.IsPalindromeOnAnyCombination(testcase.ToCharArray())}");
               testcase = "noon";
-            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+            Console.WriteLine($"Palindrome on any combination Test:{testcase} Result-{Palindrome.IsPalindromeOnAnyCombination(testcase.ToCharArray())}");
                 testcase = "radar";
-            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+            Console.WriteLine($"Palindrome on any combination Test:{testcase} Result-{Palindrome.IsPalindromeOnAnyCombination(testcase.ToCharArray())}");
                 testcase = "hi";
-            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+            Console.WriteLine($"Palindrome on any combination Test:{testcase} Result-{Palindrome.IsPalindromeOnAnyCombination(testcase.ToCharArray())}");
                 testcase = "";
-            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
-                testcase = "a";
-            Console.WriteLine($"Palindrome Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+            Console.WriteLine($"Palindrome on any combination Test:{testcase} Result-{Palindrome.IsPalindromeOnAnyCombination(testcase.ToCharArray())}");
+                testcase = "ivicc";
+            Console.WriteLine($"Palindrome on any combination Test:{testcase} Result-{Palindrome.IsPalindromeOnAnyCombination(testcase.ToCharArray())}");
+                 testcase = "babaccabab";
+            Console.WriteLine($"Palindrome on any combination Test:{testcase} Result-{Palindrome.IsPalindrome(testcase.ToCharArray())}");
+            Console.WriteLine($"Palindrome on any combination Test:{testcase} Result-{Palindrome.IsPalindromeOnAnyCombination(testcase.ToCharArray())}");
         }
 
         private static void ExecBinarySearch()

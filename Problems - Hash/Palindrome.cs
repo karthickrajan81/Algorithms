@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 /*Write an efficient method that checks whether any permutation
 of an input string is a palindrome.*/
 namespace Algorithms.Problems
 {
     public class Palindrome
-    {
+    {        
         public static bool IsPalindrome(char[] charArray)
         {
             var len = charArray.Length/2;
@@ -20,6 +21,24 @@ namespace Algorithms.Problems
                 index++;
             }
             return index == len;            
+        }
+
+        public static bool IsPalindromeOnAnyCombination(char[] charArray)
+        {
+           var dict = new HashSet<char>();
+           for(int i=0;i<charArray.Length;i++)
+           {
+               var val = charArray[i];
+               if(!dict.Contains(val))
+               {
+                   dict.Add(val);
+               }
+               else
+               {
+                  dict.Remove(val);
+               }
+           }
+           return dict.Count <= 1;
         }
     }
 }
