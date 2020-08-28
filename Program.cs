@@ -24,7 +24,34 @@ namespace Algorithms
             //ExecSameMovieLength();
             //ExecFindRepeatNums();
             //ExecBinarySearch();        
-             ExecPalindromeProblem();
+             //ExecPalindromeProblem();
+             ExecWordCollectionProblem();
+        }
+
+        private static void ExecWordCollectionProblem()
+        {
+            var text = "I like cake";
+            ValidatewordCount(text);
+            text = "Chocolate cake for dinner and pound cake for dessert";
+            ValidatewordCount(text);
+            text = "Strawberry short cake? Yum!";
+            ValidatewordCount(text);
+            text = "Dessert - mille-feuille cake";
+            ValidatewordCount(text);
+            text = "Mmm...mmm...decisions...decisions";
+            ValidatewordCount(text);
+            text = "Allie's Bakery: Sasha's Cakes";
+            ValidatewordCount(text);          
+        }
+
+        private static void ValidatewordCount(string text)
+        {
+            var actual = new WordCollection(text);
+            Console.WriteLine($"Words list extracted from this text:{text}");
+            foreach(var kvp in actual.WordsToCounts)
+            {
+                Console.WriteLine($"{kvp.Key}:{kvp.Value}");
+            }
         }
 
         private static void ExecPalindromeProblem()
