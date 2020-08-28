@@ -24,8 +24,29 @@ namespace Algorithms
             //ExecSameMovieLength();
             //ExecFindRepeatNums();
             //ExecBinarySearch();        
-             //ExecPalindromeProblem();
-             ExecWordCollectionProblem();
+            //ExecPalindromeProblem();
+            //ExecWordCollectionProblem();
+            ExecSortUsingHashProblem();
+        }
+
+        private static void ExecSortUsingHashProblem()
+        {
+             var scores = new int[] { 37, 89, 41, 65, 91, 53 };
+             DisplayResultForSort(scores, SortUsingHash.Sort(scores, 100));
+        }
+
+        private static void DisplayResultForSort(int[] input, int[] sorted)
+        {
+            Console.WriteLine("Input:");
+            foreach(var item in input)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("Sorted Result:");
+            foreach(var item in sorted)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void ExecWordCollectionProblem()
