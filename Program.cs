@@ -26,7 +26,18 @@ namespace Algorithms
             //ExecBinarySearch();        
             //ExecPalindromeProblem();
             //ExecWordCollectionProblem();
-            ExecSortUsingHashProblem();
+            //ExecSortUsingHashProblem();
+            ExecStockPricesProblem();
+        }
+
+        private static void ExecStockPricesProblem()
+        {
+           Console.WriteLine($"Stock price profit result:{StockPrices.GetMaxProfit(new int[] { 1, 5, 3, 2 })} expected:{4}");
+           Console.WriteLine($"Stock price profit result:{StockPrices.GetMaxProfit(new int[] { 7, 2, 8, 9 })} expected:{7}");
+           Console.WriteLine($"Stock price profit result:{StockPrices.GetMaxProfit(new int[] {  1, 6, 7, 9  })} expected:{8}");
+           Console.WriteLine($"Stock price profit result:{StockPrices.GetMaxProfit(new int[] {  9, 7, 4, 1 })} expected:{-2}");
+           Console.WriteLine($"Stock price profit result:{StockPrices.GetMaxProfit(new int[] { 1, 1, 1, 1})} expected:{0}");
+           Console.WriteLine($"Stock price profit result:{StockPrices.GetMaxProfit(new int[] { 5 })} expected:{0}");
         }
 
         private static void ExecSortUsingHashProblem()
