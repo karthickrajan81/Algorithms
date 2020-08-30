@@ -27,7 +27,17 @@ namespace Algorithms
             //ExecPalindromeProblem();
             //ExecWordCollectionProblem();
             //ExecSortUsingHashProblem();
-            ExecStockPricesProblem();
+            //ExecStockPricesProblem();
+            ExecFindHighestProblem();
+        }
+
+         private static void ExecFindHighestProblem()
+        {
+           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] { 1, 2, 3, 4 })} expected:{24}");
+           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] {  6, 1, 3, 5, 7, 8, 2 })} expected:{336}");
+           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] {  -5, 4, 8, 2, 3 })} expected:{96}");
+           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] {  -10, 1, 3, 2, -10})} expected:{300}");
+           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] { -5, -1, -3, -2})} expected:{-6}");
         }
 
         private static void ExecStockPricesProblem()
