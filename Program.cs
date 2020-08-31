@@ -28,16 +28,28 @@ namespace Algorithms
             //ExecWordCollectionProblem();
             //ExecSortUsingHashProblem();
             //ExecStockPricesProblem();
-            ExecFindHighestProblem();
+            //ExecFindHighestProblem();
+            ExecProductsOfAllIntsProblem();
         }
 
-         private static void ExecFindHighestProblem()
+        private static void ExecProductsOfAllIntsProblem()
         {
-           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] { 1, 2, 3, 4 })} expected:{24}");
-           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] {  6, 1, 3, 5, 7, 8, 2 })} expected:{336}");
-           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] {  -5, 4, 8, 2, 3 })} expected:{96}");
-           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] {  -10, 1, 3, 2, -10})} expected:{300}");
-           Console.WriteLine($"Stock price profit result:{FindHighest.HighestProductOf3(new int[] { -5, -1, -3, -2})} expected:{-6}");
+           var output = ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] {  1, 2, 3  });
+           Console.WriteLine($"Exec Products Of All Ints Problem result:{123} Expected:{ 632 }");
+           PrintArray(output,"Actual output" );
+ /*        Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] {  6, 1, 3, 5, 7, 8, 2 })} expected:{336}");
+           Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] {  -5, 4, 8, 2, 3 })} expected:{96}");
+           Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] {  -10, 1, 3, 2, -10})} expected:{300}");
+           Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] { -5, -1, -3, -2})} expected:{-6}");
+ */        }
+
+        private static void ExecFindHighestProblem()
+        {
+           Console.WriteLine($"Find Highest result:{FindHighest.HighestProductOf3(new int[] { 1, 2, 3, 4 })} expected:{24}");
+           Console.WriteLine($"Find Highest result:{FindHighest.HighestProductOf3(new int[] {  6, 1, 3, 5, 7, 8, 2 })} expected:{336}");
+           Console.WriteLine($"Find Highest result:{FindHighest.HighestProductOf3(new int[] {  -5, 4, 8, 2, 3 })} expected:{96}");
+           Console.WriteLine($"Find Highest result:{FindHighest.HighestProductOf3(new int[] {  -10, 1, 3, 2, -10})} expected:{300}");
+           Console.WriteLine($"Find Highest result:{FindHighest.HighestProductOf3(new int[] { -5, -1, -3, -2})} expected:{-6}");
         }
 
         private static void ExecStockPricesProblem()

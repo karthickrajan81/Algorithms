@@ -3,7 +3,7 @@ namespace Algorithms.Problems
 {   
     //Given an array of integers, find the highest product you can get from three of the integers. 
     public class FindHighest
-    {
+    { 
         public static int HighestProductOf3(int[] input)
         {
             if(input.Length < 3)
