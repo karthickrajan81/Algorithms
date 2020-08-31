@@ -29,7 +29,22 @@ namespace Algorithms
             //ExecSortUsingHashProblem();
             //ExecStockPricesProblem();
             //ExecFindHighestProblem();
-            ExecProductsOfAllIntsProblem();
+            //ExecProductsOfAllIntsProblem();
+            ExecShuffleArrayProblem();
+        }
+
+        private static void ExecShuffleArrayProblem()
+        {
+            var initial = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var shuffled = (int[]) initial.Clone();
+            ShuffleArray.Shuffle(shuffled);
+            Console.WriteLine($"Initial array: [{string.Join(", ", initial)}]");
+            Console.WriteLine($"Shuffled array: [{string.Join(", ", shuffled)}]");
+
+            var shuffleusingKnuth = (int[]) initial.Clone();
+            ShuffleArray.Shuffle(shuffleusingKnuth);
+            Console.WriteLine($"Initial array: [{string.Join(", ", initial)}]");
+            Console.WriteLine($"Shuffled array: [{string.Join(", ", shuffleusingKnuth)}]");
         }
 
         private static void ExecProductsOfAllIntsProblem()
@@ -37,11 +52,11 @@ namespace Algorithms
            var output = ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] {  1, 2, 3  });
            Console.WriteLine($"Exec Products Of All Ints Problem result:{123} Expected:{ 632 }");
            PrintArray(output,"Actual output" );
- /*        Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] {  6, 1, 3, 5, 7, 8, 2 })} expected:{336}");
+           /*Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] {  6, 1, 3, 5, 7, 8, 2 })} expected:{336}");
            Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] {  -5, 4, 8, 2, 3 })} expected:{96}");
            Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] {  -10, 1, 3, 2, -10})} expected:{300}");
-           Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] { -5, -1, -3, -2})} expected:{-6}");
- */        }
+           Console.WriteLine($"Stock price profit result:{ProductsOfAllInts.GetProductsOfAllIntsExceptAtIndex(new int[] { -5, -1, -3, -2})} expected:{-6}");*/
+        }
 
         private static void ExecFindHighestProblem()
         {
