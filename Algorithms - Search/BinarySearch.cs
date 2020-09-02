@@ -6,28 +6,22 @@ namespace Algorithms.Search
     {
         public static bool Search(int[] sortedNums,int numToSearch)
         {            
-            var start = -1;
-            var end = sortedNums.Length;           
-            while(start+1 < end)
-            {
-                 var distance = end - start;
-                 var mid = distance/2;
-                 var pointer = mid+start;
-                 if(pointer>= sortedNums.Length)
-                 {
-                     break;
-                 }
-                if(numToSearch == sortedNums[pointer])
+            var start = 0;
+            var end = sortedNums.Length -1 ;           
+            while(start <= end)
+            {               
+                var mid =  (start+end)/2;                
+                if(numToSearch == sortedNums[mid])
                 {
                     return true;
                 }
-                if(numToSearch > sortedNums[pointer])
+                if(numToSearch > sortedNums[mid])
                 {
-                    start = pointer;                  
+                    start = mid+1;                  
                 }
                 else
                 {
-                    end = pointer;
+                    end = mid-1;
                 }
             }
             return false;
@@ -35,28 +29,24 @@ namespace Algorithms.Search
 
         public static bool RecursiveSearch(int[] sortedNums,int start, int end,int numToSearch)
         { 
-                if(!(start+1 <end))
+                if(start <= end)
                 {
                     return false;
                 }
-                 var distance = end - start;
-                 var mid = distance/2;
-                 var pointer = mid+start;
-                 if(pointer>= sortedNums.Length)
-                 {
-                     return false;
-                 }
-                if(numToSearch == sortedNums[pointer])
+                var mid = (start+end)/2;
+                if(numToSearch == sortedNums[mid])
                 {
                     return true;
                 }
-                if(numToSearch > sortedNums[pointer])
+                if(numToSearch > sortedNums[mid])
                 {
-                    return RecursiveSearch(sortedNums,pointer,end,numToSearch);
+                    start = mid +1;
+                    return RecursiveSearch(sortedNums,start,end,numToSearch);
                 }
                 else
                 {
-                    return RecursiveSearch(sortedNums,start,pointer,numToSearch);
+                    start = mid -1;
+                    return RecursiveSearch(sortedNums,start,end,numToSearch);
                 }           
         }
     }

@@ -30,7 +30,19 @@ namespace Algorithms
             //ExecStockPricesProblem();
             //ExecFindHighestProblem();
             //ExecProductsOfAllIntsProblem();
-            ExecShuffleArrayProblem();
+            //ExecShuffleArrayProblem();
+            ExecFindStartingPoint();
+        }
+
+        private static void ExecFindStartingPoint()
+        {
+            var arr = new string[] { "grape", "orange", "plum", "radish","apple" };
+            Console.WriteLine($"{arr} Expected:{4} Actual{ CircularSortedList.FindRotationPoint(arr)}");
+            arr = new string[] {"cape", "cake"};
+            Console.WriteLine($"{arr} Expected:{1} Actual{ CircularSortedList.FindRotationPoint(arr)}");
+            arr = new string[] {"ptolemaic", "retrograde", "supplant", "undulate", "xenoepist",
+            "asymptote", "babka", "banoffee", "engender", "karpatka", "othellolagkage"};
+            Console.WriteLine($"{arr} Expected:{5} Actual{ CircularSortedList.FindRotationPoint(arr)}");    
         }
 
         private static void ExecShuffleArrayProblem()
