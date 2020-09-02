@@ -45,7 +45,7 @@ namespace Algorithms.Search
                 }
                 else
                 {
-                    start = mid -1;
+                    end = mid -1;
                     return RecursiveSearch(sortedNums,start,end,numToSearch);
                 }           
         }

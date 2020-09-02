@@ -9,7 +9,7 @@ namespace Algorithms.Problems
       and then start from the beginning of the alphabet. In other words, this is an alphabetically ordered array that has been "rotated."*/
     public class CircularSortedList
     {       
-        public static int FindRotationPoint(String[] words)
+        public static int FindRotationPointByLinearsearch(String[] words)
         {
             // Find the rotation point in the array
             //Linear search - Brute force apprach
@@ -41,6 +41,50 @@ namespace Algorithms.Problems
                 }
                 //To do:  Binary Search approach
                 return 0;            
+        }
+
+        public static int FindRotationPoint(String[] words)
+        {
+            // Find the rotation point in the array
+            //Binary search - Runtime complexity O(log n)
+            int start = 0;
+            int end = words.Length -1;
+            int next = 1;
+            int prev = -1; 
+            while(start <= end)
+            {
+                int i = (start+end)/2;
+                    if(i==0)
+                    {
+                        prev = words.Length -1;
+                        next = i+1;
+                    }
+                    else if(i == words.Length -1)
+                    {
+                        next = 0;
+                        prev = i-1;
+                    }
+                    else
+                    {
+                        next = i+1;
+                        prev = i-1;
+                    }
+                 if(String.Compare(words[i], words[next], StringComparison.Ordinal) < 0
+                    && String.Compare(words[i], words[prev], StringComparison.Ordinal) < 0)
+                    {
+                        return i;
+                    }
+                    else if(i<start)
+                    {
+                        end = i -1;
+                    }
+                    else
+                    {
+                        start = i+1;
+                    }
+
+            }
+            return 0;             
         }
     }
 }

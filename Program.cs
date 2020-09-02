@@ -37,12 +37,15 @@ namespace Algorithms
         private static void ExecFindStartingPoint()
         {
             var arr = new string[] { "grape", "orange", "plum", "radish","apple" };
-            Console.WriteLine($"{arr} Expected:{4} Actual{ CircularSortedList.FindRotationPoint(arr)}");
+            PrintArray(arr,"CircularSortedArray Input:");
+            Console.WriteLine($"Expected:{4} Actual:{CircularSortedList.FindRotationPoint(arr)}");
             arr = new string[] {"cape", "cake"};
-            Console.WriteLine($"{arr} Expected:{1} Actual{ CircularSortedList.FindRotationPoint(arr)}");
+             PrintArray(arr,"CircularSortedArray Input:");
+            Console.WriteLine($"Expected:{1} Actual:{CircularSortedList.FindRotationPoint(arr)}");
             arr = new string[] {"ptolemaic", "retrograde", "supplant", "undulate", "xenoepist",
             "asymptote", "babka", "banoffee", "engender", "karpatka", "othellolagkage"};
-            Console.WriteLine($"{arr} Expected:{5} Actual{ CircularSortedList.FindRotationPoint(arr)}");    
+            PrintArray(arr,"CircularSortedArray Input:");
+            Console.WriteLine($"Expected:{5} Actual:{CircularSortedList.FindRotationPoint(arr)}");    
         }
 
         private static void ExecShuffleArrayProblem()
@@ -345,6 +348,15 @@ namespace Algorithms
             Console.WriteLine($"DeQueue:{circularQueue.deQueue()}");  // return true
             Console.WriteLine($"EnQueue 5:{circularQueue.enQueue(5)}");  // return true
             PrintArray(circularQueue.GetAll(), "Current Queue Status:");
+        }
+
+        private static void PrintArray(string[] arr, string heder)
+        {
+            Console.WriteLine(heder);
+            foreach(var item in arr)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void PrintArray(int[] arr, string heder)
