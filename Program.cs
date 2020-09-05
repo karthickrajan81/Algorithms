@@ -32,7 +32,61 @@ namespace Algorithms
             //ExecProductsOfAllIntsProblem();
             //ExecShuffleArrayProblem();
             //ExecFindStartingPoint();
-            ExecRepeatingNumbersProblem();
+            //ExecRepeatingNumbersProblem();
+            ExecFastMeetingRangeProblem();
+        }
+
+        private static void ExecFastMeetingRangeProblem()
+        {
+            var meetings = new List<Meeting>();
+            //Test case 1:
+            meetings.Add(new Meeting(0,1));
+            meetings.Add(new Meeting(3,5));
+            meetings.Add(new Meeting(4,8));
+            meetings.Add(new Meeting(10,12));
+            meetings.Add(new Meeting(9,10));
+            Console.WriteLine("Meetings Input:");
+            foreach(var meeting in meetings)
+            {
+                Console.WriteLine($"({meeting.StartTime},{meeting.EndTime})");
+            }
+            var result = MergeMeetingsByMergeSort.MergeRanges(meetings);
+            Console.WriteLine("Meetings Output:");
+            foreach(var meeting in result)
+            {
+                Console.WriteLine($"({meeting.StartTime},{meeting.EndTime})");
+            }
+            meetings.Clear();
+            //Test case 2:           
+            meetings.Add(new Meeting(1,3));
+            meetings.Add(new Meeting(4,8));
+            Console.WriteLine("Meetings Input:");
+            foreach(var meeting in meetings)
+            {
+                Console.WriteLine($"({meeting.StartTime},{meeting.EndTime})");
+            }
+            result = MergeMeetingsByMergeSort.MergeRanges(meetings);
+            Console.WriteLine("Meetings Output:");
+            foreach(var meeting in result)
+            {
+                Console.WriteLine($"({meeting.StartTime},{meeting.EndTime})");
+            }
+            //Test case 3:
+            meetings.Clear();            
+            meetings.Add(new Meeting(1,4));
+            meetings.Add(new Meeting(2,5));
+            meetings.Add(new Meeting(5,8));
+            Console.WriteLine("Meetings Input:");
+            foreach(var meeting in meetings)
+            {
+                Console.WriteLine($"({meeting.StartTime},{meeting.EndTime})");
+            }
+            result = MergeMeetingsByMergeSort.MergeRanges(meetings);
+            Console.WriteLine("Meetings Output:");
+            foreach(var meeting in result)
+            {
+                Console.WriteLine($"({meeting.StartTime},{meeting.EndTime})");
+            }
         }
 
         private static void ExecRepeatingNumbersProblem()
