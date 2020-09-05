@@ -5,7 +5,7 @@ namespace Algorithms.Sorting
 {
 public class MergeSort{
 
-    public int[] Sort(int[] inputArray)
+    public static int[] Sort(int[] inputArray)
     {
         if(inputArray.Length < 2)
         {

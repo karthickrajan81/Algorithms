@@ -31,7 +31,35 @@ namespace Algorithms
             //ExecFindHighestProblem();
             //ExecProductsOfAllIntsProblem();
             //ExecShuffleArrayProblem();
-            ExecFindStartingPoint();
+            //ExecFindStartingPoint();
+            ExecRepeatingNumbersProblem();
+        }
+
+        private static void ExecRepeatingNumbersProblem()
+        {
+            var numbers = new int[] { 4, 1, 4, 8, 3, 2, 7, 6, 5 };
+            PrintArray(numbers,"Find repeating numbers");
+            var expected = 4;
+            var actual = RepeatingNumbers.FindRepeat(numbers);
+            Console.WriteLine($"Actual Result:{actual} Expected Result:{expected}");
+
+            numbers = new int[] { 1,1 };
+            PrintArray(numbers,"Find repeating numbers");
+            expected = 1;
+            actual = RepeatingNumbers.FindRepeat(numbers);
+            Console.WriteLine($"Actual Result:{actual} Expected Result:{expected}");
+
+            numbers = new int[] {  1, 2, 3, 2 };
+            PrintArray(numbers,"Find repeating numbers");
+            expected = 2;
+            actual = RepeatingNumbers.FindRepeat(numbers);
+            Console.WriteLine($"Actual Result:{actual} Expected Result:{expected}");
+
+            numbers = new int[] { 1, 2, 5, 5, 5, 5 };
+            PrintArray(numbers,"Find repeating numbers");
+            expected = 5;
+            actual = RepeatingNumbers.FindRepeat(numbers);
+            Console.WriteLine($"Actual Result:{actual} Expected Result:{expected}");
         }
 
         private static void ExecFindStartingPoint()
@@ -323,9 +351,8 @@ namespace Algorithms
         private static void ExecMergeSort(int[] inputArray)
         {
             Console.WriteLine("<--Merge Sort Algorithm-->");
-            var sortArray = new  MergeSort();
             PrintArray(inputArray, "MergeSort Input:");
-            int[] output = sortArray.Sort(inputArray);
+            int[] output = MergeSort.Sort(inputArray);
             PrintArray(output,"MergeSort Result:");
         }
 
