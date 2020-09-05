@@ -7,10 +7,10 @@ namespace Algorithms.Search
         {        
             if(left < right)  
             {            
-            int mid = (left+right)/2;
-            Sort(input,left,mid);
-            Sort(input,mid+1,right);
-            Merge(input,left,mid,right);
+                int mid = (left+right)/2;
+                Sort(input,left,mid);
+                Sort(input,mid+1,right);
+                Merge(input,left,mid,right);
             }
         }
 
@@ -18,10 +18,10 @@ namespace Algorithms.Search
         {
             int start2 = end1+1;
 
-/*             if(input[end1] <= input[start2])
+            if(input[end1] <= input[start2])
             {
                 return;
-            } */ 
+            } 
             while(start1<=arrayEnd && start2 <= arrayEnd)
             {                
                 if(input[start1] <= input[start2])
