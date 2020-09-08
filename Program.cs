@@ -33,9 +33,56 @@ namespace Algorithms
             //ExecShuffleArrayProblem();
             //ExecFindStartingPoint();
             //ExecRepeatingNumbersProblem();
-            ExecFastMeetingRangeProblem();
+            //ExecFastMeetingRangeProblem();
+            ExecPreOrderTreeTraverser();
+            ExecInOrderTreeTraverser();
+            ExecPostOrderTreeTraverser();
         }
 
+        private static void ExecPreOrderTreeTraverser()
+        {
+            var treeTraverser = new TreeTraverser();
+            var output = treeTraverser.GetPreOrderList(GetTreeTestCase1("Pre","1,2,3"));
+            PrintArray(output.ToArray(),"Tree traversal in order output:");
+            treeTraverser = new TreeTraverser();
+            output = treeTraverser.GetPreOrderList(GetTreeTestCase2());
+            PrintArray(output.ToArray(),"Tree traversal in order output:");
+        }
+
+
+        private static void ExecInOrderTreeTraverser()
+        {
+            var treeTraverser = new TreeTraverser();
+            var output = treeTraverser.GetInOrderList(GetTreeTestCase1("In","1,3,2"));
+            PrintArray(output.ToArray(),"Tree traversal in order output:");         
+        }
+
+
+        private static void ExecPostOrderTreeTraverser()
+        {
+            var treeTraverser = new TreeTraverser();
+            var output = treeTraverser.GetPostOrderList(GetTreeTestCase1("Post","3,2,1"));
+            PrintArray(output.ToArray(),"Tree traversal in order output:");
+        }
+
+        private static BinaryTreeNode GetTreeTestCase1(string order, string expected)
+        {
+            Console.WriteLine($"{order} order tree traversal input:{expected}");
+            //var leftLeafNode = new BinaryTreeNode(2);            
+            var rLeftLeafNode = new BinaryTreeNode(3);
+            //var rRightLeafNode = new BinaryTreeNode(5);
+            var rightNode = new BinaryTreeNode(2,rLeftLeafNode,null);
+            var rootNode = new BinaryTreeNode(1,null,rightNode);
+            return rootNode;
+        }
+
+        private static BinaryTreeNode GetTreeTestCase2()
+        {
+            Console.WriteLine($"Pre order tree traversal input:3,1,2");
+            Console.WriteLine("Expected result: 3, 1, 2");
+            var rootNode = new BinaryTreeNode(3,new BinaryTreeNode(1),new BinaryTreeNode(2));
+            return rootNode;
+        }
         private static void ExecFastMeetingRangeProblem()
         {
             var meetings = new List<Meeting>();

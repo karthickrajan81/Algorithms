@@ -7,15 +7,6 @@ namespace Algorithms.DS
         public int Value {get;}
         public BinaryTreeNode LeftNode {get; private set;}
         public BinaryTreeNode RightNode {get; private set;}
-        public BinaryTreeNode ParentNode {get; }
-
-        public bool IsRootNode 
-        {
-            get 
-            {
-              return  null == ParentNode;
-            }
-        }
 
         public bool IsLeafNode
         {
@@ -25,13 +16,14 @@ namespace Algorithms.DS
             }
         }
 
-        public BinaryTreeNode(BinaryTreeNode parent,int value)
+        public BinaryTreeNode(int value, BinaryTreeNode left= null, BinaryTreeNode right = null)
         {            
             Value = value;
-            ParentNode = parent;
+            LeftNode = left;
+            RightNode = right; 
         }
 
-        public BinaryTreeNode InsertLeft(int value)
+       /*  public BinaryTreeNode InsertLeft(int value)
         {            
             LeftNode = new BinaryTreeNode(this,value);
             return LeftNode;
@@ -41,6 +33,6 @@ namespace Algorithms.DS
         {           
             RightNode = new BinaryTreeNode(this,value);
             return RightNode;
-        }
+        } */
     }    
 }
