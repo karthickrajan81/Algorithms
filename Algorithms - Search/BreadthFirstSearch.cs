@@ -4,7 +4,7 @@ using Algorithms.DS;
 
 namespace Algorithms.Search
 {
-    public class BreathFirstSearch
+    public class BreadthFirstSearch
     {
         public static List<List<int>> GetBFSLevelOrder(BinaryTreeNode rootNode) 
         {

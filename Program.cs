@@ -42,7 +42,7 @@ namespace Algorithms
 
         private static void ExecBfsAlgorithm()
         {            
-            var output = BreathFirstSearch.GetBFSLevelOrder(BfsTestCase1());
+            var output = BreadthFirstSearch.GetBFSLevelOrder(BfsTestCase1());
             Console.WriteLine("Output:");
             foreach(var item in output)
             {
@@ -54,7 +54,7 @@ namespace Algorithms
                 Console.WriteLine(str);
             }
 
-            output = BreathFirstSearch.GetBFSLevelOrder(BfsTestCase2());
+            output = BreadthFirstSearch.GetBFSLevelOrder(BfsTestCase2());
             Console.WriteLine("Output:");
             foreach(var item in output)
             {
