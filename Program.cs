@@ -34,9 +34,61 @@ namespace Algorithms
             //ExecFindStartingPoint();
             //ExecRepeatingNumbersProblem();
             //ExecFastMeetingRangeProblem();
-            ExecPreOrderTreeTraverser();
-            ExecInOrderTreeTraverser();
-            ExecPostOrderTreeTraverser();
+            //ExecPreOrderTreeTraverser();
+            //ExecInOrderTreeTraverser();
+            //ExecPostOrderTreeTraverser();
+            ExecBfsAlgorithm();
+        }
+
+        private static void ExecBfsAlgorithm()
+        {            
+            var output = BreathFirstSearch.GetBFSLevelOrder(BfsTestCase1());
+            Console.WriteLine("Output:");
+            foreach(var item in output)
+            {
+                var str = string.Empty;
+                foreach(var val in item)
+                {
+                  str += string.IsNullOrEmpty(str)?$"{val}": $",{val}";
+                }
+                Console.WriteLine(str);
+            }
+
+            output = BreathFirstSearch.GetBFSLevelOrder(BfsTestCase2());
+            Console.WriteLine("Output:");
+            foreach(var item in output)
+            {
+                var str = string.Empty;
+                foreach(var val in item)
+                {
+                  str += string.IsNullOrEmpty(str)?$"{val}": $",{val}";
+                }
+                Console.WriteLine(str);
+            }
+        }
+
+        private static BinaryTreeNode BfsTestCase1()
+        {
+            Console.WriteLine("Tree traversal using BFS algoritm:");
+            Console.WriteLine("Input: [3,9,20,null,null,15,7]");
+            var leftLeaf = new BinaryTreeNode(15);            
+            var rightLeaf = new BinaryTreeNode(7);
+            var lev1Left = new BinaryTreeNode(9);
+            var lev1Right = new BinaryTreeNode(20,leftLeaf,rightLeaf);           
+            var rootNode = new BinaryTreeNode(3,lev1Left,lev1Right);
+            return rootNode;
+        }
+
+        private static BinaryTreeNode BfsTestCase2()
+        {
+            Console.WriteLine("Tree traversal using BFS algoritm:");
+            Console.WriteLine("Input:[1,2,3,4,null,null,5]");
+            var leftLeaf = new BinaryTreeNode(5);            
+            var rightLeaf = new BinaryTreeNode(4);
+            var lev1Left = new BinaryTreeNode(3,leftLeaf,null);
+            var lev1Right = new BinaryTreeNode(2,null,rightLeaf);           
+            var rootNode = new BinaryTreeNode(1,lev1Left,lev1Right);
+            return rootNode;
         }
 
         private static void ExecPreOrderTreeTraverser()
