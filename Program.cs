@@ -38,11 +38,29 @@ namespace Algorithms
             //ExecInOrderTreeTraverser();
             //ExecPostOrderTreeTraverser();
             ExecBfsAlgorithm();
+            ExecDfsAlgorithm();
+        }
+
+        private static void ExecDfsAlgorithm()
+        {            
+            var output = DepathFirstSearch.GetDFSLevelOrder(TreeTestCase1());
+            Console.WriteLine("Output:");
+            foreach(var item in output)
+            {
+                Console.WriteLine(item);
+            }
+
+            output = DepathFirstSearch.GetDFSLevelOrder(TreeTestCase2());
+            Console.WriteLine("Output:");
+            foreach(var item in output)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void ExecBfsAlgorithm()
         {            
-            var output = BreadthFirstSearch.GetBFSLevelOrder(BfsTestCase1());
+            var output = BreadthFirstSearch.GetBFSLevelOrder(TreeTestCase1());
             Console.WriteLine("Output:");
             foreach(var item in output)
             {
@@ -54,7 +72,7 @@ namespace Algorithms
                 Console.WriteLine(str);
             }
 
-            output = BreadthFirstSearch.GetBFSLevelOrder(BfsTestCase2());
+            output = BreadthFirstSearch.GetBFSLevelOrder(TreeTestCase2());
             Console.WriteLine("Output:");
             foreach(var item in output)
             {
@@ -67,7 +85,7 @@ namespace Algorithms
             }
         }
 
-        private static BinaryTreeNode BfsTestCase1()
+        private static BinaryTreeNode TreeTestCase1()
         {
             Console.WriteLine("Tree traversal using BFS algoritm:");
             Console.WriteLine("Input: [3,9,20,null,null,15,7]");
@@ -79,14 +97,14 @@ namespace Algorithms
             return rootNode;
         }
 
-        private static BinaryTreeNode BfsTestCase2()
+        private static BinaryTreeNode TreeTestCase2()
         {
             Console.WriteLine("Tree traversal using BFS algoritm:");
             Console.WriteLine("Input:[1,2,3,4,null,null,5]");
             var leftLeaf = new BinaryTreeNode(5);            
             var rightLeaf = new BinaryTreeNode(4);
-            var lev1Left = new BinaryTreeNode(3,leftLeaf,null);
-            var lev1Right = new BinaryTreeNode(2,null,rightLeaf);           
+            var lev1Left = new BinaryTreeNode(2,leftLeaf,null);
+            var lev1Right = new BinaryTreeNode(3,null,rightLeaf);           
             var rootNode = new BinaryTreeNode(1,lev1Left,lev1Right);
             return rootNode;
         }
