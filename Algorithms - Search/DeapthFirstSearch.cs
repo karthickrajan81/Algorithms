@@ -4,7 +4,7 @@ using Algorithms.DS;
 
 namespace Algorithms.Search
 {
-    public class DepathFirstSearch
+    public class DepthFirstSearch
     {
         public static IList<int> GetDFSLevelOrder(BinaryTreeNode rootNode)
         {

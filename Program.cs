@@ -43,14 +43,14 @@ namespace Algorithms
 
         private static void ExecDfsAlgorithm()
         {            
-            var output = DepathFirstSearch.GetDFSLevelOrder(TreeTestCase1());
+            var output = DepthFirstSearch.GetDFSLevelOrder(TreeTestCase1());
             Console.WriteLine("Output:");
             foreach(var item in output)
             {
                 Console.WriteLine(item);
             }
 
-            output = DepathFirstSearch.GetDFSLevelOrder(TreeTestCase2());
+            output = DepthFirstSearch.GetDFSLevelOrder(TreeTestCase2());
             Console.WriteLine("Output:");
             foreach(var item in output)
             {
