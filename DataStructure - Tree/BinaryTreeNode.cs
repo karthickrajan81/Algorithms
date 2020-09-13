@@ -23,16 +23,16 @@ namespace Algorithms.DS
             RightNode = right; 
         }
 
-       /*  public BinaryTreeNode InsertLeft(int value)
+        public BinaryTreeNode InsertLeft(int value)
         {            
-            LeftNode = new BinaryTreeNode(this,value);
+            LeftNode = new BinaryTreeNode(value);
             return LeftNode;
         }
 
         public BinaryTreeNode InsertRight(int value)
         {           
-            RightNode = new BinaryTreeNode(this,value);
+            RightNode = new BinaryTreeNode(value);
             return RightNode;
-        } */
+        }
     }    
 }

@@ -4,6 +4,7 @@ using Algorithms.DS;
 using Algorithms.Problems;
 using Algorithms.Sorting;
 using Algorithms.Search;
+using Problems.TreesAndGraphs;
 
 namespace Algorithms
 {
@@ -37,8 +38,51 @@ namespace Algorithms
             //ExecPreOrderTreeTraverser();
             //ExecInOrderTreeTraverser();
             //ExecPostOrderTreeTraverser();
-            ExecBfsAlgorithm();
-            ExecDfsAlgorithm();
+            //ExecBfsAlgorithm();
+            //ExecDfsAlgorithm();
+            ExecSuperBalancedTreeProblem();
+        }
+
+        private static void ExecSuperBalancedTreeProblem()
+        {
+            Console.WriteLine("Is Super Balanced Tree ");
+            var root = new BinaryTreeNode(5);
+            var a = root.InsertLeft(8);
+            var b = root.InsertRight(6);
+            a.InsertLeft(1);
+            a.InsertRight(2);
+            b.InsertLeft(3);
+            b.InsertRight(4);
+            var result = SuperBalancedTree.IsSuperBalanced(root);
+            Console.WriteLine($"Expected Result:{true}");
+            Console.WriteLine($"Actual Result:{result}");
+
+            var root1 = new BinaryTreeNode(1);
+            var a1 = root1.InsertLeft(2);
+            var b1 = root1.InsertRight(4);
+            a1.InsertLeft(3);
+            a1.InsertRight(7).InsertRight(8);
+            b1.InsertRight(5).InsertRight(6).InsertRight(9);
+            result = SuperBalancedTree.IsSuperBalanced(root1);
+            Console.WriteLine($"Expected Result:{false}");
+            Console.WriteLine($"Actual Result:{result}");
+            
+            var root2 = new BinaryTreeNode(1);
+            var a2 = root2.InsertLeft(2);
+            var b2 = a2.InsertLeft(3);
+            a2.InsertRight(4);
+            b2.InsertLeft(5);
+            b2.InsertRight(6);
+            root2.InsertRight(7).InsertRight(8).InsertRight(9).InsertRight(10);
+            result = SuperBalancedTree.IsSuperBalanced(root2);
+            Console.WriteLine($"Expected Result:{false}");
+            Console.WriteLine($"Actual Result:{result}");
+
+            var root3 = new BinaryTreeNode(1);
+            root3.InsertRight(2).InsertRight(3).InsertRight(4);
+            result = SuperBalancedTree.IsSuperBalanced(root3);
+            Console.WriteLine($"Expected Result:{true}");
+            Console.WriteLine($"Actual Result:{result}");
         }
 
         private static void ExecDfsAlgorithm()
