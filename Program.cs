@@ -4,7 +4,6 @@ using Algorithms.DS;
 using Algorithms.Problems;
 using Algorithms.Sorting;
 using Algorithms.Search;
-using Problems.TreesAndGraphs;
 
 namespace Algorithms
 {
@@ -40,7 +39,54 @@ namespace Algorithms
             //ExecPostOrderTreeTraverser();
             //ExecBfsAlgorithm();
             //ExecDfsAlgorithm();
-            ExecSuperBalancedTreeProblem();
+            //ExecSuperBalancedTreeProblem();
+            ExecIsBalancedTreeProblem();
+        }
+
+        private static void ExecIsBalancedTreeProblem()
+        {
+            //Test case1
+            var root = GetBinaryTreeTestCase1();
+            Console.WriteLine($"Binary Tree Test case 1: Exected{true} Actual{BinaryTree.IsBalanced(root)}");
+            //Test case2
+            var root1 = GetBinaryTreeTestCase2();      
+            Console.WriteLine($"Binary Tree Test case 1: Expected {false} Actual {BinaryTree.IsBalanced(root1)}");
+             //Test case3
+            var root2 = GetBinaryTreeTestCase3();      
+            Console.WriteLine($"Binary Tree Test case 1: Expected {false} Actual {BinaryTree.IsBalanced(root2)}");
+        }
+
+        private static BinaryTreeNode GetBinaryTreeTestCase3()
+        {
+            var root = new BinaryTreeNode(10);
+            var a = root.InsertLeft(5);            
+            var b = root.InsertRight(15);
+            b.InsertLeft(6);
+            b.InsertRight(20);
+            return root;
+        }
+        private static BinaryTreeNode GetBinaryTreeTestCase1()
+        {
+            var root = new BinaryTreeNode(50);
+            var a = root.InsertLeft(30);
+            a.InsertLeft(10);
+            a.InsertRight(40);
+            var b = root.InsertRight(70);
+            b.InsertLeft(60);
+            b.InsertRight(80);
+            return root;
+        }
+
+        public static BinaryTreeNode GetBinaryTreeTestCase2()
+        {
+            var root = new BinaryTreeNode(50);
+            var a = root.InsertLeft(30);
+            a.InsertLeft(20);
+            a.InsertRight(60);
+            var b = root.InsertRight(80);
+            b.InsertLeft(70);
+            b.InsertRight(90);
+            return root;
         }
 
         private static void ExecSuperBalancedTreeProblem()
