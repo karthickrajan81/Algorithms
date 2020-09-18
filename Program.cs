@@ -40,7 +40,32 @@ namespace Algorithms
             //ExecBfsAlgorithm();
             //ExecDfsAlgorithm();
             //ExecSuperBalancedTreeProblem();
-            ExecIsBalancedTreeProblem();
+            //ExecIsBalancedTreeProblem();
+            ExecFindSecondLargestInBSTProblem();
+        }
+
+        private static void ExecFindSecondLargestInBSTProblem()
+        {
+               //Test case1
+            var root = GetBinaryTreeTestCase1();
+            Console.WriteLine($"Binary Tree Test case 1: Expected{70} Actual{FindSecondLargestInBST.GetSecondLargest(root)}");
+             //Test case2
+            var root1 = new BinaryTreeNode(50);
+            var a = root1.InsertLeft(30);
+            a.InsertLeft(10);
+            a.InsertRight(40);
+            root1.InsertRight(70).InsertLeft(60);
+            Console.WriteLine($"Binary Tree Test case 1: Expected {60} Actual {FindSecondLargestInBST.GetSecondLargest(root1)}");
+
+            //LargestHasLeftSubtreeTest
+            var root2 = new BinaryTreeNode(50);
+            var a2 = root2.InsertLeft(30);
+            a2.InsertLeft(10);
+            a2.InsertRight(40);
+            var b2 = root2.InsertRight(70).InsertLeft(60);
+            b2.InsertLeft(55).InsertRight(58);
+            b2.InsertRight(65);
+            Console.WriteLine($"Binary Tree Test case 1: Expected {65} Actual {FindSecondLargestInBST.GetSecondLargest(root2)}");
         }
 
         private static void ExecIsBalancedTreeProblem()
