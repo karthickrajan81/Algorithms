@@ -41,7 +41,104 @@ namespace Algorithms
             //ExecDfsAlgorithm();
             //ExecSuperBalancedTreeProblem();
             //ExecIsBalancedTreeProblem();
-            ExecFindSecondLargestInBSTProblem();
+            //ExecFindSecondLargestInBSTProblem();
+            ExecGraphColoringProblem();
+        }
+
+        private static void ExecGraphColoringProblem()
+        {
+           var  graph = SeparateGraphTest();
+           GraphColoring.ColorGraph(graph, GetColors());
+           Console.WriteLine($"SeparateGraphTest - Expected-{true} Actual-{GraphHelper.IsGraphColoringValid(graph)}"); 
+
+           var  graph1 = LineGraphTest();
+           GraphColoring.ColorGraph(graph1, GetColors());
+           Console.WriteLine($"SeparateGraphTest - Expected-{true} Actual-{GraphHelper.IsGraphColoringValid(graph1)}"); 
+
+           var  graph2 = TriangleGraphTest();
+           GraphColoring.ColorGraph(graph2, GetColors());
+           Console.WriteLine($"SeparateGraphTest - Expected-{true} Actual-{GraphHelper.IsGraphColoringValid(graph2)}"); 
+
+           var  graph3 = EnvelopeGraphTest();
+           GraphColoring.ColorGraph(graph3, GetColors());
+           Console.WriteLine($"SeparateGraphTest - Expected-{true} Actual-{GraphHelper.IsGraphColoringValid(graph3)}"); 
+        }
+
+        static GraphNode[] LineGraphTest()
+        {
+            var nodeA = new GraphNode("A");
+            var nodeB = new GraphNode("B");
+            var nodeC = new GraphNode("C");
+            var nodeD = new GraphNode("D");
+            nodeA.AddNeighbor(nodeB);
+            nodeB.AddNeighbor(nodeA);
+            nodeB.AddNeighbor(nodeC);
+            nodeC.AddNeighbor(nodeB);
+            nodeC.AddNeighbor(nodeD);
+            nodeD.AddNeighbor(nodeC);
+            var graph = new GraphNode[] {nodeA, nodeB, nodeC, nodeD};
+            return graph;
+        }
+
+        static string[] GetColors()
+        {
+            return new string[] { "Red", "Green", "Blue", "Orange", "Yellow", "White" };
+        }
+
+        static GraphNode[] SeparateGraphTest()
+        {
+            var nodeA = new GraphNode("A");
+            var nodeB = new GraphNode("B");
+            var nodeC = new GraphNode("C");
+            var nodeD = new GraphNode("D");
+            nodeA.AddNeighbor(nodeB);
+            nodeB.AddNeighbor(nodeA);
+            nodeC.AddNeighbor(nodeD);
+            nodeD.AddNeighbor(nodeC);
+            var graph = new GraphNode[] {nodeA, nodeB, nodeC, nodeD};
+            return graph;
+        }
+
+        static GraphNode[] TriangleGraphTest()
+        {
+            var nodeA = new GraphNode("A");
+            var nodeB = new GraphNode("B");
+            var nodeC = new GraphNode("C");
+            nodeA.AddNeighbor(nodeB);
+            nodeA.AddNeighbor(nodeC);
+            nodeB.AddNeighbor(nodeA);
+            nodeB.AddNeighbor(nodeC);
+            nodeC.AddNeighbor(nodeA);
+            nodeC.AddNeighbor(nodeB);
+            var graph = new GraphNode[] {nodeA, nodeB, nodeC};
+            return graph;
+        }
+
+        static GraphNode[] EnvelopeGraphTest()
+        {
+            var nodeA = new GraphNode("A");
+            var nodeB = new GraphNode("B");
+            var nodeC = new GraphNode("C");
+            var nodeD = new GraphNode("D");
+            var nodeE = new GraphNode("E");
+            nodeA.AddNeighbor(nodeB);
+            nodeA.AddNeighbor(nodeC);
+            nodeB.AddNeighbor(nodeA);
+            nodeB.AddNeighbor(nodeC);
+            nodeB.AddNeighbor(nodeD);
+            nodeB.AddNeighbor(nodeE);
+            nodeC.AddNeighbor(nodeA);
+            nodeC.AddNeighbor(nodeB);
+            nodeC.AddNeighbor(nodeD);
+            nodeC.AddNeighbor(nodeE);
+            nodeD.AddNeighbor(nodeB);
+            nodeD.AddNeighbor(nodeC);
+            nodeD.AddNeighbor(nodeE);
+            nodeE.AddNeighbor(nodeB);
+            nodeE.AddNeighbor(nodeC);
+            nodeE.AddNeighbor(nodeD);
+            var graph = new GraphNode[] {nodeA, nodeB, nodeC, nodeD, nodeE};
+            return graph;    
         }
 
         private static void ExecFindSecondLargestInBSTProblem()
