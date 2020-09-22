@@ -42,8 +42,34 @@ namespace Algorithms
             //ExecSuperBalancedTreeProblem();
             //ExecIsBalancedTreeProblem();
             //ExecFindSecondLargestInBSTProblem();
-            ExecGraphColoringProblem();
+            //ExecGraphColoringProblem();
+            ExecMeshMessageProblem();
         }
+
+        private static Dictionary<string, string[]> GetNetwork()
+        {
+            return new Dictionary<string, string[]>()
+            {
+                { "a", new string[] { "b", "c", "d"} },
+                { "b", new string[] { "a", "d" } },
+                { "c", new string[] { "a", "e" } },
+                { "d", new string[] { "a", "b" } },
+                { "e", new string[] { "c" } },
+                { "f", new string[] { "g" } },
+                { "g", new string[] { "f" } },
+            };
+        }
+        private static void ExecMeshMessageProblem()
+        {
+            Console.WriteLine("Shortest Path Mesh Message Problem:");
+            var output = MeshMessage.GetPath(GetNetwork(), "a", "e");
+            Console.WriteLine($"Expected: a, c, e ");
+            PrintArray(output.ToArray(), "Shorest Path Result:");
+
+            output = MeshMessage.GetPath(GetNetwork(),  "d", "c");
+            Console.WriteLine($"Expected: d, a, c ");
+            PrintArray(output.ToArray(), "Shorest Path Result:");
+        }         
 
         private static void ExecGraphColoringProblem()
         {
