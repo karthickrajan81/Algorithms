@@ -7,7 +7,7 @@ namespace Algorithms.Problems
 {
     public class RepeatingNumber
     {
-    public static int FindRepeat(int[] numbers)
+    public static int FindRepeat1(int[] numbers)
         {
             // Find the number that appears twice
             //var nPlusOneLen = numbers.Length;        
@@ -22,6 +22,27 @@ namespace Algorithms.Problems
             }        
             result -= sumOfn;
             return result;        
+        }
+
+        public static int FindRepeat(int[] numbers)
+        {
+            if(numbers.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+            for(int i=0;i<numbers.Length;i++)
+            {
+                var val = Math.Abs(numbers[i]);
+                if(numbers[val] < 0)
+                {
+                    return val;
+                }
+                else
+                {
+                    numbers[val] *= -1;
+                }
+            }
+            return -1;
         }
     }
 }

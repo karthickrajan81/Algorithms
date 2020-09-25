@@ -22,7 +22,7 @@ namespace Algorithms
             //ExecMergeArrays();
             //ExecFirstComeFirstServe();
             //ExecSameMovieLength();
-            //ExecFindRepeatNums();
+            ExecFindRepeatNums();
             //ExecBinarySearch();        
             //ExecPalindromeProblem();
             //ExecWordCollectionProblem();
@@ -43,7 +43,7 @@ namespace Algorithms
             //ExecIsBalancedTreeProblem();
             //ExecFindSecondLargestInBSTProblem();
             //ExecGraphColoringProblem();
-            ExecMeshMessageProblem();
+            //ExecMeshMessageProblem();
         }
 
         private static Dictionary<string, string[]> GetNetwork()
@@ -654,6 +654,21 @@ namespace Algorithms
             var numbers = new int[] { 1, 5, 9, 7, 2, 6, 3, 8, 2, 4 };
            
             var actual = RepeatingNumber.FindRepeat(numbers);
+            Console.WriteLine($"Expected Resut {2} Actual Result {actual}");
+
+            numbers = new int[] { 4, 1, 4, 8, 3, 2, 7, 6, 5  };
+           
+            actual = RepeatingNumber.FindRepeat(numbers);
+            Console.WriteLine($"Expected Resut {4} Actual Result {actual}");
+
+            numbers = new int[] { 1, 2, 5, 5, 5, 5  };
+           
+            actual = RepeatingNumber.FindRepeat(numbers);
+            Console.WriteLine($"Expected Resut {5} Actual Result {actual}");
+
+            numbers = new int[] {  1, 2, 3, 2};
+           
+            actual = RepeatingNumber.FindRepeat(numbers);
             Console.WriteLine($"Expected Resut {2} Actual Result {actual}");
         }
 
