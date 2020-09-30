@@ -50,12 +50,15 @@ namespace Algorithms
 
         private static void ExecFibonacciWithHashProblem()
         {
-            Console.WriteLine($"Fibonacci Result for {0}: Actul - {FibonacciWithHash.Fib(0)} Exepected - {0}");
-            Console.WriteLine($"Fibonacci Result for {1}: Actul - {FibonacciWithHash.Fib(1)} Exepected - {1}");
-            Console.WriteLine($"Fibonacci Result for {2}: Actul - {FibonacciWithHash.Fib(2)} Exepected - {1}");
-            Console.WriteLine($"Fibonacci Result for {3}: Actul - {FibonacciWithHash.Fib(3)} Exepected - {2}");
-            Console.WriteLine($"Fibonacci Result for {5}: Actul - {FibonacciWithHash.Fib(5)} Exepected - {5}");
-            Console.WriteLine($"Fibonacci Result for {10}: Actul - {FibonacciWithHash.Fib(10)} Exepected - {55}");
+            Console.WriteLine($"Fibonacci Result for {0}: Actul - {FibonacciWithHash.FibUsingBottomUp(0)} Exepected - {0}");
+            Console.WriteLine($"Fibonacci Result for {1}: Actul - {FibonacciWithHash.FibUsingBottomUp(1)} Exepected - {1}");
+            Console.WriteLine($"Fibonacci Result for {2}: Actul - {FibonacciWithHash.FibUsingBottomUp(2)} Exepected - {1}");
+            Console.WriteLine($"Fibonacci Result for {3}: Actul - {FibonacciWithHash.FibUsingBottomUp(3)} Exepected - {2}");
+            Console.WriteLine($"Fibonacci Result for {5}: Actul - {FibonacciWithHash.FibUsingBottomUp(5)} Exepected - {5}");
+            Console.WriteLine($"Fibonacci Result for {10}: Actul - {FibonacciWithHash.FibUsingBottomUp(10)} Exepected - {55}");
+
+           
+            Console.WriteLine($"Fibonacci Result for {10}: Actul - {FibonacciWithHash.FibUsingMemoization(10)} Exepected - {55}");
         }
 
         private static void ExecGetAllWordCombinationProblem()
