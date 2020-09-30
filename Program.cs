@@ -22,7 +22,7 @@ namespace Algorithms
             //ExecMergeArrays();
             //ExecFirstComeFirstServe();
             //ExecSameMovieLength();
-            ExecFindRepeatNums();
+            //ExecFindRepeatNums();
             //ExecBinarySearch();        
             //ExecPalindromeProblem();
             //ExecWordCollectionProblem();
@@ -44,6 +44,18 @@ namespace Algorithms
             //ExecFindSecondLargestInBSTProblem();
             //ExecGraphColoringProblem();
             //ExecMeshMessageProblem();
+            ExecGetAllWordCombinationProblem();
+        }
+
+        private static void ExecGetAllWordCombinationProblem()
+        {
+            var input = "abc";
+            Console.WriteLine($"Get all word combinations for given string:{input}");
+            PrintArray( GetAllCombinationsInWord.GetCombinations(input),"Word combinations output:");
+
+            input = "abcd";
+            Console.WriteLine($"Get all word combinations for given string:{input}");
+            PrintArray(GetAllCombinationsInWord.GetCombinations(input),"Word combinations output:");
         }
 
         private static Dictionary<string, string[]> GetNetwork()
@@ -799,6 +811,15 @@ namespace Algorithms
             Console.WriteLine($"DeQueue:{circularQueue.deQueue()}");  // return true
             Console.WriteLine($"EnQueue 5:{circularQueue.enQueue(5)}");  // return true
             PrintArray(circularQueue.GetAll(), "Current Queue Status:");
+        }
+
+         private static void PrintArray(IEnumerable<object> arr, string heder)
+        {
+            Console.WriteLine(heder);
+            foreach(var item in arr)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void PrintArray(string[] arr, string heder)
