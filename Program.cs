@@ -45,6 +45,17 @@ namespace Algorithms
             //ExecGraphColoringProblem();
             //ExecMeshMessageProblem();
             ExecGetAllWordCombinationProblem();
+            ExecFibonacciWithHashProblem();
+        }
+
+        private static void ExecFibonacciWithHashProblem()
+        {
+            Console.WriteLine($"Fibonacci Result for {0}: Actul - {FibonacciWithHash.Fib(0)} Exepected - {0}");
+            Console.WriteLine($"Fibonacci Result for {1}: Actul - {FibonacciWithHash.Fib(1)} Exepected - {1}");
+            Console.WriteLine($"Fibonacci Result for {2}: Actul - {FibonacciWithHash.Fib(2)} Exepected - {1}");
+            Console.WriteLine($"Fibonacci Result for {3}: Actul - {FibonacciWithHash.Fib(3)} Exepected - {2}");
+            Console.WriteLine($"Fibonacci Result for {5}: Actul - {FibonacciWithHash.Fib(5)} Exepected - {5}");
+            Console.WriteLine($"Fibonacci Result for {10}: Actul - {FibonacciWithHash.Fib(10)} Exepected - {55}");
         }
 
         private static void ExecGetAllWordCombinationProblem()
